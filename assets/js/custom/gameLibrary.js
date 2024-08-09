@@ -24,17 +24,16 @@ async function fetchAndDisplayRelease() {
       const gameDetailUrl = `details.html?id=${game.id}`; 
 
       gameItemsHTML += `
-                <div class="item">
-                  <ul>
-                    <input type="hidden" id="custId" name="custId" value="${game.id}">
-                    <li><img src="${game.thumbnail}" alt="${game.title}" class="templatemo-item"></li>
-                    <li><h4>${game.title}</h4><span>${game.genre}</span></li>
-                    <li><h4>Plataform</h4><span>${game.platform}</span></li> <!-- Date Added can be dynamic if available -->
-                    <li><h4>Date relaese</h4><span>${game.release_date}</span></li> <!-- Hours Played can be dynamic if available -->
-                    <li><div class="main-border-button border-no-active"><a href="${gameDetailUrl}">Details</a></div></li>
-                  </ul>
-                </div>
-              `;
+      <a href="${gameDetailUrl}" class="item">
+        <ul>
+          <li><img src="${game.thumbnail}" alt="${game.title}" class="templatemo-item"></li>
+          <li><h4>${game.title}</h4><span>${game.genre}</span></li>
+          <li><h4>Plataform</h4><span>${game.platform}</span></li>
+          <li><h4>Date relaese</h4><span>${game.release_date}</span></li>
+          <li><h4>Price</h4><span>R$ 20,00</span></li>
+        </ul>
+      </a>
+    `;
     }
 
     gameLibraryContainer.innerHTML = gameItemsHTML;

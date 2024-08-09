@@ -1,4 +1,11 @@
 // assets/js/custom/details.js
+function getQueryParameter(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+const gameId = getQueryParameter('id'); 
+console.log(gameId);
 
 const gameDetailsContainer = document.getElementById('game-details-container');
 const featuredBannerImage = document.querySelector('#feature-details-banner img'); 
@@ -66,7 +73,7 @@ async function fetchAndDisplayGameDetails(gameId) {
         </div>
         <div class="col-lg-12">
           <div class="main-border-button">
-            <a href="${gameData.game_url}" target="_blank">Play ${gameData.title} Now!</a>
+            <a href="${gameData.game_url}" target="_blank">Buy ${gameData.title} Now!</a>
           </div>
         </div>
       </div>
@@ -89,4 +96,4 @@ async function fetchAndDisplayGameDetails(gameId) {
 }
 
 // Example: Fetch and display details for a specific game ID 
-fetchAndDisplayGameDetails(516); 
+fetchAndDisplayGameDetails(gameId);
