@@ -1718,6 +1718,11 @@ body {
   .main-profile .main-info {
     margin: 45px 0px;
   }
+
+
+  .header-area{
+    background-color: transparent;
+
 }
 
 @media (max-width: 1200px) {
@@ -1732,4 +1737,5 @@ body {
   .gaming-library .item ul li {
     width: 16%;
   }
+}
 }
