@@ -89,4 +89,4 @@ async function fetchAndDisplayGameDetails(gameId) {
 }
 
 // Example: Fetch and display details for a specific game ID 
-fetchAndDisplayGameDetails(452); 
+fetchAndDisplayGameDetails(516); 
