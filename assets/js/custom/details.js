@@ -17,9 +17,6 @@ async function fetchAndDisplayGameDetails(gameId) {
     const response = await fetch(url, options);
     const gameData = await response.json();
 
-    // **Update the banner image:**
-    featuredBannerImage.src = gameData.thumbnail; 
-
     // Create the HTML for game details
     let gameDetailsHTML = `
       <div class="row">
@@ -76,7 +73,7 @@ async function fetchAndDisplayGameDetails(gameId) {
 
       <div class="row">
       ${gameData.screenshots.map(screenshot => `
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <img src="${screenshot.image}" alt="${gameData.title} screenshot" style="border-radius: 23px; margin-bottom: 30px;">
         </div>
       `).join('')} 
