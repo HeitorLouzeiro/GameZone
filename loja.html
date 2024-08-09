@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="assets/js/custom/loja.js" async></script>
+    <title>Cyborg - Awesome HTML5 Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <style>
+        /* Estilo dos Botões */
+        .button-hover-background {
+            background-color: #e75e8d; /* Cor de fundo */
+            color: #fff; /* Cor do texto */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button-hover-background:hover {
+            background-color: #c55275; /* Cor de fundo ao passar o mouse */
+            transform: scale(1.05); /* Leve zoom ao passar o mouse */
+        }
+
+        /* Estilo dos Títulos dos Produtos */
+        .product-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo dos Preços dos Produtos */
+        .product-price {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: #e75e8d;
+            font-size: 1.2em;
+        }
+
+        /* Estilo dos Botões de Compra */
+        .purchase-button {
+            background-color: #e75e8d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .purchase-button:hover {
+            background-color: #c55275;
+            transform: scale(1.05);
+        }
+
+        /* Estilo da Tabela do Carrinho */
+        .cart-table th, .cart-table td {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        .cart-product-title {
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .remove-product-button {
+            background-color: #e75e8d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .remove-product-button:hover {
+            background-color: #c55275;
+            transform: scale(1.05);
+        }
+
+        /* Ajuste para o Layout Geral */
+        .container.normal-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="">
+                        </a>
+                        <div class="search-input">
+                            <form id="search" action="#">
+                                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                                <i class="fa fa-search"></i>
+                            </form>
+                        </div>
+                        <ul class="nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="browse.html">Browse</a></li>
+                            <li><a href="details.html" class="active">Details</a></li>
+                            <li><a href="streams.html">Streams</a></li>
+                            <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-section">
+      <section class="container normal-section">
+        <h2 class="section-title">Posters</h2>
+
+        <div class="products-container">
+          <div class="movie-product">
+            <strong class="product-title">Poster 1</strong>
+            <!-- <br> -->
+            <img src="/images/poster1.png" alt="Poster 1" class="product-image">
+            <div class="product-price-container">
+              <span class="product-price">R$29,99</span>
+              <button type="button" class="button-hover-background">Adicionar ao carrinho</button>
+            </div>
+          </div>
+
+          <div class="movie-product">
+            <strong class="product-title">Poster 2</strong>
+            <!-- <br> -->
+            <img src="/images/poster2.png" alt="Poster 2" class="product-image">
+            <div class="product-price-container">
+              <span class="product-price">R$39,99</span>
+              <button type="button" class="button-hover-background">Adicionar ao carrinho</button>
+            </div>
+          </div>
+  
+          <div class="movie-product">
+            <strong class="product-title">Poster 3</strong>
+            <!-- <br> -->
+            <img src="/images/poster3.png" alt="Poster 3" class="product-image">
+            <div class="product-price-container">
+              <span class="product-price">R$19,99</span>
+              <button type="button" class="button-hover-background">Adicionar ao carrinho</button>
+            </div>
+          </div>
+  
+          <div class="movie-product">
+            <strong class="product-title">Poster 4</strong>
+            <!-- <br> -->
+            <img src="/images/poster4.png" alt="Poster 4" class="product-image">
+            <div class="product-price-container">
+              <span class="product-price">R$79,99</span>
+              <button type="button" class="button-hover-background">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+      </section>  
+      <section class="container normal-section">
+        <h2 class="section-title">Carrinho</h2>
+
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th class="table-head-item first-col">Item</th>
+              <th class="table-head-item second-col">Preço</th>
+              <th class="table-head-item third-col">Quantidade</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- <tr class="cart-product">
+              <td class="product-identification">
+                <img src="images/produto2.png" alt="Miniatura" class="cart-product-image">
+                <strong class="cart-product-title">Miniatura</strong>
+              </td>
+              <td>
+                <span class="cart-product-price">R$69,90</span>
+              </td>
+              <td>
+                <input type="number" value="2" min="0" class="product-qtd-input">
+                <button type="button" class="remove-product-button">Remover</button>
+              </td>
+            </tr>
+            <tr class="cart-product">
+              <td class="product-identification">
+                <img src="images/poster3.png" alt="Poster 3" class="cart-product-image">
+                <strong class="cart-product-title">Poster 3</strong>
+              </td>
+              <td>
+                <span class="cart-product-price">R$19,99</span>
+              </td>
+              <td>
+                <input type="number" value="1" min="0" class="product-qtd-input">
+                <button type="button" class="remove-product-button">Remover</button>
+              </td>
+            </tr> -->
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="3" class="cart-total-container">
+                <strong>Total</strong>
+                <span>R$0,00</span>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <button type="button" class="purchase-button">Finalizar Compra</button>
+      </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
+                        <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/custom/details.js"></script>
+
+</body>
+
+</html>
