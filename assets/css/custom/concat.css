@@ -23,6 +23,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para um efeito de elevação */
     width: 100%;
     max-width: 1000px;
+    margin-top: 300px;
     
 }
 

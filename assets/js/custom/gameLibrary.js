@@ -1,6 +1,6 @@
 const gameLibraryContainer = document.getElementById('game-library');
             const urlBase = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
-            const gamesToDisplay = 3; // Number of games to display in the library
+            const gamesToDisplay = 12; // Number of games to display in the library
 
             async function fetchAndDisplayRelease() {
               const url = urlBase + '?sort-by=release-date';
