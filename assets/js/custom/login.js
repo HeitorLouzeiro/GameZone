@@ -27,7 +27,7 @@ loginForm.addEventListener('submit', function (event) {
 
         if (nome === username && senha === password) {
             console.log('entrou')
-            window.location.href = "index.html";
+            window.location.href = "home.html";
         }
 
     }
