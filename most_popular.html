@@ -39,6 +39,7 @@ https://templatemo.com/tm-579-cyborg-gaming
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; /* Centralizar os cards horizontalmente */
 }
 
 .game-card {
@@ -49,6 +50,7 @@ https://templatemo.com/tm-579-cyborg-gaming
     text-align: center;
     width: calc(25% - 20px);
     box-sizing: border-box;
+    color: #ffffff; /* Define a cor do texto dentro do card como branco */
 }
 
 .game-thumbnail {
@@ -150,11 +152,6 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <h2 style="text-align: center; margin-bottom: 50px;">Most Popular</h2>
 
                     <div class="main-container">
-                        <!-- Seção de Promoções -->
-                        <div id="promotions-section">
-                            <!-- As promoções serão inseridas aqui pelo JavaScript -->
-                        </div>
-
                         <!-- Seção de Mais Populares -->
                         <div id="popular-games-section">
                             <!-- Os jogos populares serão inseridos aqui pelo JavaScript -->
@@ -162,86 +159,55 @@ https://templatemo.com/tm-579-cyborg-gaming
                     </div>
 
                     <script>
+                        const popularGamesSection = document.getElementById('popular-games-section');
+                        const urlBase = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+                        const apiKey = '3f76d5a1e8msh3280b77787db71dp1f9480jsn0e9d313f07a1';
 
-                        // assets/js/custom/details.js
+                        async function fetchPopularGames() {
+                            const url = `${urlBase}?sort-by=popularity`;
+                            const options = {
+                                method: 'GET',
+                                headers: {
+                                    'x-rapidapi-key': apiKey,
+                                    'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
+                                }
+                            };
 
-const popularGamesSection = document.getElementById('popular-games-section');
+                            try {
+                                const response = await fetch(url, options);
+                                const gamesData = await response.json();
+                                return gamesData;
+                            } catch (error) {
+                                console.error('Error fetching games:', error);
+                                return [];
+                            }
+                        }
 
-function displayPopularGames() {
-  // Dados fictícios dos jogos mais populares
-  const popularGames = [
-  {
-      title: 'The Witcher 3: Wild Hunt',
-      thumbnail: 'data:image/jpeg;base64,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',
-      short_description: 'Um RPG de ação com uma narrativa rica e um mundo aberto expansivo.',
-      game_url: '#'
-    },
-    {
-      title: 'Fortnite',
-      thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtS4sZv_gqhio9QZzxMRwwuCzSyWUiqZxAvw&s',
-      short_description: 'Um jogo de battle royale com construção e eventos ao vivo.',
-      game_url: '#'
-    },
-    {
-      title: 'Minecraft',
-      thumbnail: 'https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a',
-      short_description: 'Um sandbox criativo onde você pode construir e explorar mundos gerados aleatoriamente.',
-      game_url: '#'
-    },
-    {
-      title: 'Among Us',
-      thumbnail: 'https://cdn1.epicgames.com/salesEvent/salesEvent/amoguslandscape_2560x1440-3fac17e8bb45d81ec9b2c24655758075',
-      short_description: 'Um jogo de dedução social onde os jogadores tentam descobrir o impostor.',
-      game_url: '#'
-    },
-    {
-      title: 'Valorant',
-      thumbnail: 'https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-5eff1895cb16cfb2bbbaaef1f6e90223',
-      short_description: 'Um jogo de tiro tático em primeira pessoa com habilidades de personagens.',
-      game_url: '#'
-    },
-    {
-      title: 'Apex Legends',
-      thumbnail: 'https://i.ytimg.com/vi_webp/AOn50482E80/maxresdefault.webp',
-      short_description: 'Um battle royale com personagens únicos e jogabilidade rápida.',
-      game_url: '#'
-    },
-    {
-      title: 'Call of Duty: Warzone',
-      thumbnail: 'https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/store/games/wz/overview/WZPLP_Hero.webp',
-      short_description: 'Um battle royale gratuito ambientado no universo Call of Duty.',
-      game_url: '#'
-    },
-    {
-      title: 'League of Legends',
-      thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoRCyHto6yaEMWaydXElYJUecs_HPlcfn5Q&s',
-      short_description: 'Um MOBA popular com uma grande variedade de campeões e estratégias.',
-      game_url: '#'
-    }
-  ];
+                        async function displayPopularGames() {
+                            const popularGames = await fetchPopularGames();
 
-  // Criar o HTML para os jogos populares
-  let popularGamesHTML = `
-    <div class="game-row">
-      ${popularGames.map(game => `
-        <div class="game-card">
-          <img src="${game.thumbnail}" alt="${game.title}" class="game-thumbnail">
-          <div class="game-info">
-            <h3 class="game-title">${game.title}</h3>
-            <p class="game-description">${game.short_description}</p>
-            <a href="${game.game_url}" target="_blank" class="game-button">Buy now!</a>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-  `;
+                            // Limitar a exibição para os 12 primeiros jogos
+                            const gamesToDisplay = popularGames.slice(0, 12);
 
-  popularGamesSection.innerHTML = popularGamesHTML;
-}
+                            let popularGamesHTML = `
+                                <div class="game-row">
+                                    ${gamesToDisplay.map(game => `
+                                   
+                                        <div class="game-card">
+                                            <img src="${game.thumbnail}" alt="${game.title}" class="game-thumbnail">
+                                            <div class="game-info">
+                                                <h3 class="game-title">${game.title}</h3>
+                                                <a href="${game.game_url}" target="_blank" class="game-button">Buy</a>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `;
 
-// Exibir os jogos populares na carga da página
-document.addEventListener('DOMContentLoaded', displayPopularGames);
+                            popularGamesSection.innerHTML = popularGamesHTML;
+                        }
 
+                        displayPopularGames();
                     </script>
 
                     <!-- ***** Gaming Library End ***** -->
